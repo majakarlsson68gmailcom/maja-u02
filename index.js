@@ -17,3 +17,30 @@ navLinks.forEach((link) => {
         navContainer.classList.remove("is-open");
     })
 })
+
+// darkmode
+const toggleBtn = document.querySelector(".darkmode-toggle");
+const rootElement = document.documentElement;
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark");
+
+function getCurrentTheme() {
+    const userChoice = localStorage.getItem("theme");
+
+    if (userChoice) return userChoice;
+    return prefersDark.matches ? "dark" : "light";
+    
+}
+
+function setTheme(theme){
+    rootElement.dataset.theme = theme;
+    toggleBtn.setAttribute("aria-pressed", theme === "dark");
+}
+
+toggleBtn.addEventListener("click", () => {
+    const newTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+})
+
+const currentTheme = getCurrentTheme();
+setTheme(currentTheme);

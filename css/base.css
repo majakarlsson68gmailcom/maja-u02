@@ -164,7 +164,7 @@
 
 /* Darkmode */
 @media (prefers-color-scheme: dark){
-:root {
+:root:not([data-theme="light"]) {
   color-scheme: dark;
 
   --color-bg: #191919;
@@ -182,8 +182,27 @@
 }
 }
 
- 
+ :root[data-theme="dark"] {
+  color-scheme: dark;
 
+  --color-bg: #191919;
+  --color-surface: #363636;
+  --color-heading: #CCCCCC;
+  --color-text: #a7a7a7;
+  --color-text-content: #CCCCCC; /* I projekt korten */
+  
+  --color-text-strong: #fff;
+
+  --color-text-hover: #fffdfd;
+  .icon-invert {
+    filter: invert(0.8);
+  }
+}
+
+.darkmode-toggle[aria-pressed="true"] .icon-dark,
+.darkmode-toggle[aria-pressed="false"] .icon-light {
+  display: none;
+}
 
 
 

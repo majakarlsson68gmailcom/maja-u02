@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    line-height: 1.5;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+ul[role=list] {
+    list-style: none;
+}

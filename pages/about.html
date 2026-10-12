@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <script src="../index.js" defer></script>
+    <title>About me</title>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            
+            <div class="nav-mobile-container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo.svg" alt="Maja, homepage">
+                </a>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" >
+                    <svg class="hamburger-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 7L4 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M20 12L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M20 17L4 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    <span class="visually-hidden">Menu</span>
+                </button>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html" aria-current="page">About</a></li>
+                        <li><a href="tech-stack.html">Tech Stack</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            
+                <ul class="social-list" role="list">
+                    <li><a href="https://github.com/majakarlsson68gmailcom" target="_blank"><span class="visually-hidden">Github</span>
+                            <svg class="social-icons" aria-hidden="true" viewBox="0 0 88 88" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M44 0C19.69 0 0 19.69 0 44C0 63.47 12.595 79.915 30.085 85.745C32.285 86.13 33.11 84.81 33.11 83.655C33.11 82.61 33.055 79.145 33.055 75.46C22 77.495 19.14 72.765 18.26 70.29C17.765 69.025 15.62 65.12 13.75 64.075C12.21 63.25 10.01 61.215 13.695 61.16C17.16 61.105 19.635 64.35 20.46 65.67C24.42 72.325 30.745 70.455 33.275 69.3C33.66 66.44 34.815 64.515 36.08 63.415C26.29 62.315 16.06 58.52 16.06 41.69C16.06 36.905 17.765 32.945 20.57 29.865C20.13 28.765 18.59 24.255 21.01 18.205C21.01 18.205 24.695 17.05 33.11 22.715C36.63 21.725 40.37 21.23 44.11 21.23C47.85 21.23 51.59 21.725 55.11 22.715C63.525 16.995 67.21 18.205 67.21 18.205C69.63 24.255 68.09 28.765 67.65 29.865C70.455 32.945 72.16 36.85 72.16 41.69C72.16 58.575 61.875 62.315 52.085 63.415C53.68 64.79 55.055 67.43 55.055 71.555C55.055 77.44 55 82.17 55 83.655C55 84.81 55.825 86.185 58.025 85.745C66.7597 82.796 74.3497 77.1822 79.7268 69.6937C85.1039 62.2052 87.9974 53.219 88 44C88 19.69 68.31 0 44 0Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://x.com/MajaKarlssoony" target="_blank"><span class="visually-hidden">X</span><svg class="social-icons" aria-hidden="true" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.875 1.875C8.59152 1.875 1.875 8.59152 1.875 16.875C1.875 25.1585 8.59152 31.875 16.875 31.875C25.1585 31.875 31.875 25.1585 31.875 16.875C31.875 8.59152 25.1585 1.875 16.875 1.875ZM24.0837 13.1819C24.0937 13.3393 24.0937 13.5033 24.0937 13.6641C24.0937 18.5792 20.3504 24.2411 13.51 24.2411C11.4007 24.2411 9.44531 23.6283 7.79799 22.5737C8.09933 22.6071 8.38728 22.6205 8.69531 22.6205C10.4364 22.6205 12.0368 22.0312 13.3125 21.0335C11.6786 21 10.3058 19.9286 9.83705 18.4554C10.4096 18.5391 10.9252 18.5391 11.5145 18.3884C10.6732 18.2175 9.91699 17.7605 9.37438 17.0953C8.83178 16.43 8.53623 15.5973 8.53795 14.7388V14.692C9.03013 14.9699 9.60938 15.1406 10.2154 15.1641C9.70595 14.8245 9.28814 14.3645 8.99903 13.8249C8.70993 13.2852 8.55845 12.6825 8.55804 12.0703C8.55804 11.3772 8.73884 10.7444 9.06362 10.1953C9.99744 11.3449 11.1627 12.2851 12.4837 12.9548C13.8047 13.6245 15.2518 14.0088 16.731 14.0826C16.2054 11.5547 18.0938 9.50893 20.3638 9.50893C21.4353 9.50893 22.3996 9.95759 23.0792 10.6808C23.9196 10.5234 24.7232 10.2087 25.4397 9.78683C25.1618 10.6473 24.5792 11.3739 23.8058 11.8326C24.5558 11.7522 25.279 11.5446 25.9487 11.2533C25.4431 11.9967 24.8103 12.6562 24.0837 13.1819Z"
+                                    fill="currentColor" />
+                            </svg></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/maja-karlsson-129566292/" target="_blank"><span class="visually-hidden">Linkedin</span><svg class="social-icons" aria-hidden="true" 
+                                viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_63_102)">
+                                    <path
+                                        d="M15 0.599998C7.04698 0.599998 0.599976 7.047 0.599976 15C0.599976 22.953 7.04698 29.4 15 29.4C22.953 29.4 29.4 22.953 29.4 15C29.4 7.047 22.953 0.599998 15 0.599998ZM11.475 20.9685H8.55898V11.5845H11.475V20.9685ZM9.99898 10.4325C9.07798 10.4325 8.48248 9.78 8.48248 8.973C8.48248 8.1495 9.09598 7.5165 10.0365 7.5165C10.977 7.5165 11.553 8.1495 11.571 8.973C11.571 9.78 10.977 10.4325 9.99898 10.4325ZM22.125 20.9685H19.209V15.768C19.209 14.5575 18.786 13.7355 17.7315 13.7355C16.926 13.7355 16.4475 14.292 16.236 14.8275C16.158 15.018 16.1385 15.288 16.1385 15.5565V20.967H13.221V14.577C13.221 13.4055 13.1835 12.426 13.1445 11.583H15.678L15.8115 12.8865H15.87C16.254 12.2745 17.1945 11.3715 18.768 11.3715C20.6865 11.3715 22.125 12.657 22.125 15.42V20.9685Z"
+                                        fill="currentColor" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_63_102">
+                                        <rect width="30" height="30" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+               
+        </div>
+        
+    </header>
+    
+    <main>
+        <section class="section container about-me">
+            <h1>About me</h1>
+        <p>Hi, I'm Maja! I hold a degree in Interaction Design from Mälardalen University, and I've worked as a UX designer through internships at Haus and MSD. I'm now studying to become a fullstack JavaScript developer, because I want to bridge the gap between design and code. I enjoy building interfaces that are not only well designed, but also accessible, clear and built with clean, maintainable code.</p>
+        <h2>Work Experience</h2>
+        
+        <ul role="list">
+            <li>
+                <div class="work-title">
+                    <h3>
+                        UX-designer
+                    </h3>
+                    <span class="pill">Internship</span>
+                </div>
+                
+                <div class="work-details">
+                    <span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 21V15V7C19 5.11438 19 4.17157 18.4142 3.58579C17.8284 3 16.8856 3 15 3H12H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 8L10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12L10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 16L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 8L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 12L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 16L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>MSD</span>
+                        <span>
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Stockholm
+                        </span>
+                        <span class="date">
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="currentColor"/>
+                                <path d="M7 3L7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M17 3L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="7" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="7" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                </svg>
+                                Jan 2026 - Jun 2026
+                        </span>
+                </div>
+            </li>
+            <li>
+                <div class="work-title">
+                    <h3>
+                        UX-designer
+                    </h3>
+                    <span class="pill">Internship</span>
+                </div>
+                
+                <div class="work-details">
+                    <span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 21V15V7C19 5.11438 19 4.17157 18.4142 3.58579C17.8284 3 16.8856 3 15 3H12H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 8L10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12L10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 16L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 8L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 12L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 16L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>Haus</span>
+                        <span>
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Västerås
+                        </span>
+                        <span class="date">
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="currentColor"/>
+                                <path d="M7 3L7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M17 3L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="7" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="7" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                </svg>
+                                Dec 2025 - Jan 2026
+                        </span>
+                </div>
+            </li>
+            <li>
+                <div class="work-title">
+                    <h3>
+                        Preschool teacher
+                    </h3>
+                    <span class="pill">Employee</span>
+                </div>
+                
+                <div class="work-details">
+                    <span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 21V15V7C19 5.11438 19 4.17157 18.4142 3.58579C17.8284 3 16.8856 3 15 3H12H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 8L10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12L10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 16L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 8L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 12L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 16L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>Skeppet förskola</span>
+                        <span>
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Eskilstuna
+                        </span>
+                        <span class="date">
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="currentColor"/>
+                                <path d="M7 3L7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M17 3L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="7" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="7" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                </svg>
+                                Jan 2025 - Jun 2026
+                        </span>
+                </div>
+            </li>
+        </ul>
+
+        <h2>Education</h2>
+        <ul role="list">
+            <li>
+                <div class="work-title">
+                    <h3>
+                        Informationsdesign
+                    </h3>
+                    <span class="pill">Full Time</span>
+                </div>
+                
+                <div class="work-details">
+                    <span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 21V15V7C19 5.11438 19 4.17157 18.4142 3.58579C17.8284 3 16.8856 3 15 3H12H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M9 8L10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12L10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 16L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 8L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 12L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 16L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>Mälardalens universitet</span>
+                        <span>
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Eskilstuna
+                        </span>
+
+                        <span class="date">
+                            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="currentColor"/>
+                                <path d="M7 3L7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M17 3L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="7" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="7" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="12" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                <rect x="13" y="16" width="4" height="2" rx="0.5" fill="currentColor"/>
+                                </svg>
+                                Sep 2023 - Jun 2026
+                        </span>
+                </div>
+            </li>
+        </ul>
+        </section>
+        
+    </main>
+    <footer>
+        Designed and built by <span class="name-heading">Maja Karlsson</span>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+  /* Variabler */
+  :root {
+    /* Färger */
+    --color-heading: #42446E;
+    --color-text: #666;
+    --color-text-muted: #a7a7a7;
+    --color-text-strong: #000;
+    --color-text-content: #666666;
+    --color-border: #EBEAED;
+
+    /* Hover & interactios */
+    --color-text-hover: #343434;
+
+    --color-bg: #fff;
+    --color-surface: #fff;
+
+    --color-primary: linear-gradient(to right, #13b0f5 2%, #e70faa 100%);
+
+    --shadow-card: 2px 2px 100px 0 rgba(0, 0, 0, 0.20);
+
+    --color-badge-bg: #D7FFe0;
+    --color-badge-text: #02640c;
+
+    /* Typsnitt */
+    --font-family-poppins: "Poppins", sans-serif;
+    --font-family-dm-sans: "DM Sans", sans-serif;
+
+    --font-heading: var(--font-family-poppins);
+    --font-body: var(--font-family-poppins);
+    --font-nav: var(--font-family-dm-sans);
+
+    /* Text storlekar */
+    --font-size-100: 0.688rem; 
+    --font-size-200: 0.75rem;
+    --font-size-300: 1rem;
+    --font-size-400: 1.125rem;
+    --font-size-500: 1.25rem;
+    --font-size-600: 1.5rem;
+    --font-size-700: 2.625rem;
+    --font-size-800: 3.625rem;
+    /* Roll */
+
+    --font-size-label: var(--font-size-100);
+    --font-size-small: var(--font-size-200);
+    --font-size-body: var(--font-size-300);
+    --font-size-heading-sm: var(--font-size-400);
+    --font-size-heading-md: var(--font-size-500);
+    --font-size-heading-lg: var(--font-size-600);
+    --font-size-display: clamp(1.5rem, 0.5rem + 4vw, 3.625rem);
+
+    /* Spacing */
+    --space-1: 0.5rem; /* 8px */
+    --space-2: 0.75rem; /* 12pxpx */
+    --space-3: 1rem; /* 16px */
+    --space-4: 1.25rem; /* 20px */
+    --space-5: 2rem; /* 32px */
+    --space-6: 2.375rem; /* 38px */
+    --space-7: 3.875rem; /* 62px */
+    /* Roll */
+    --section-space-block: var(--space-5);
+    --section-space-inline: var(--space-4);
+  }
+
+  /* Generella regler */
+  body {
+    background-color: var(--color-bg);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--color-text);
+   
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    line-height: 1.2;
+  }
+
+  h1, h2 {
+    font-size: var(--font-size-heading-lg);
+    margin-bottom: var(--space-6);
+  }
+
+  h3 {
+    font-size: var(--font-size-heading-md);
+  }
+
+  h4 {
+    font-size: var(--font-size-heading-sm);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    max-width: 65ch;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-heading);
+    outline-offset: 3px;
+  }
+
+  * + h2 {
+    margin-top: var(--space-6);
+  }
+
+  h3:has(+ *) {
+    margin-bottom: var(--space-6);
+  }
+
+  /* Layout-styling */ /* Utility classes */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space-block);
+  padding-inline: var(--section-space-inline);
+}
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+
+/* Desktop */
+
+@media (min-width: 56rem) {
+  :root {
+    --font-size-small: var(--font-size-300);
+    --font-size-body: var(--font-size-400);
+    --font-size-heading-sm: var(--font-size-500);
+    --font-size-heading-md: var(--font-size-500);
+    --font-size-heading-lg: var(--font-size-700);
+
+    --section-space-inline: var(--space-7);
+    --section-space-block: var(--space-7);
+  }
+
+  /* mindre text än body, bara på desktop */
+  .fs-small {
+    font-size: var(--font-size-300);
+  }
+}
+
+
+/* Darkmode */
+@media (prefers-color-scheme: dark){
+:root {
+  color-scheme: dark;
+
+  --color-bg: #191919;
+  --color-surface: #363636;
+  --color-heading: #CCCCCC;
+  --color-text: #a7a7a7;
+  --color-text-content: #CCCCCC; /* I projekt korten */
+  
+  --color-text-strong: #fff;
+
+  --color-text-hover: #fffdfd;
+}
+.icon-invert {
+  filter: invert(0.8);
+}
+}
+
+ 
+
+
+
+
+

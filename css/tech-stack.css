@@ -1,0 +1,18 @@
+.grid-container-tech {
+    margin-block: var(--space-7);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(80px, 100%), 1fr));
+    gap: var(--space-7);
+}
+
+.grid-container-tech img {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+@media (min-width: 56rem) {
+    .grid-container-tech {
+        margin-top: calc(var(--space-7) * 2);
+        grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+    }
+}

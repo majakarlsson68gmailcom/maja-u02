@@ -1,5 +1,10 @@
 
 /* Hero sektion */
+.darkmode-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .hero {
     min-height: 80dvh;
     display: flex;

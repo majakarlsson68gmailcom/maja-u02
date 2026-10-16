@@ -5,6 +5,7 @@ const cvListWork = document.querySelector(".cv-list-work");
 const cvListEducation = document.querySelector(".cv-list-education");
 
 export async function initCV() {
+    if(!cvListWork) return;
     try {
         const cvData = await loadCV();
         renderCVList(cvData.jobs, cvListWork);

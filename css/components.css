@@ -15,9 +15,14 @@ header {
     
     padding: var( --space-5);
     
-    .logo {
+    .logo img {
         min-width: 42px;
         max-width: 60px;
+        border-radius: 50%;
+        border: 1px solid var(--color-primary);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center 30%;
     }
 }
 
@@ -135,9 +140,7 @@ header {
 
 /* Delade klasser */
 .name-heading {
-    background-image: var(--color-primary);
-    background-clip: text;
-    color: transparent;
+    color: var(--color-primary);
   }
 
   .icon {

@@ -1,6 +1,6 @@
-const cvItemTemplate = document.querySelector("#cv-item-template");
 
 export function renderCVList(items, listElement){
+    const cvItemTemplate = document.querySelector("#cv-item-template");
     const itemsToRender = items.map(( {
         organization, 
         type,

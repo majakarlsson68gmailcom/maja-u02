@@ -2,7 +2,7 @@
   /* Variabler */
   :root {
     /* Färger */
-    --color-heading: #42446E;
+    --color-heading: #303030;
     --color-text: #666;
     --color-text-muted: #a7a7a7;
     --color-text-strong: #000;
@@ -15,7 +15,7 @@
     --color-bg: #fff;
     --color-surface: #fff;
 
-    --color-primary: linear-gradient(to right, #13b0f5 2%, #e70faa 100%);
+    --color-primary: #FF9900;
 
     --shadow-card: 2px 2px 100px 0 rgba(0, 0, 0, 0.20);
 

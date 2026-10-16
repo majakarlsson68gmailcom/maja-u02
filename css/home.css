@@ -35,9 +35,6 @@
     max-width: 230px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid transparent;
-    background: var(--color-primary) border-box;
 }
 
 @media (min-width: 56rem) {

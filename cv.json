@@ -1,0 +1,54 @@
+{
+    "name": "Maja Karlsson",
+    "title": "Interaktionsdesigner och blivande fullstackutvecklare",
+    "location": {
+      "city": "Stockholm",
+      "country": "Sverige"
+    },
+    "education": [
+      {
+        "title": "Fullstackutvecklare JavaScript",
+        "organization": "Chas Academy",
+        "start": "2026-09",
+        "end": null,
+        "description": "Tvåårig YH-utbildning med frontend, backend, databaser, cloud och DevOps."
+      },
+      {
+        "title": "Kandidatexamen, Informationsdesign med inriktning interaktionsdesign",
+        "organization": "Mälardalens universitet",
+        "start": "2023-08",
+        "end": "2026-06",
+        "description": "Användarcentrerad design, informationsarkitektur, prototyping och användbarhetstester."
+      },
+      {
+        "title": "Psykologi, 60 hp",
+        "organization": "Mälardalens universitet",
+        "start": "2022-08",
+        "end": "2023-06",
+        "description": "Grundläggande psykologi med fokus på hur människor tänker och beter sig."
+      }
+    ],
+    "jobs": [
+      {
+        "title": "UX-designer, examensarbete",
+        "organization": "MSD",
+        "start": "2026-03",
+        "end": "2026-06",
+        "description": "Research, informationsarkitektur och implementation i företagets Confluence-miljö."
+      },
+      {
+        "title": "UX-designpraktikant",
+        "organization": "Haus",
+        "start": "2025-12",
+        "end": "2025-12",
+        "description": "UX-audits och redesign av befintliga webbplatser på byråns Västeråskontor."
+      },
+      {
+        "title": "Vikarie, förskola",
+        "organization": "Flera förskolor i Torshälla",
+        "start": "2021-09",
+        "end": "2022-06",
+        "description": "Snabbt läsa av behov och kommunicera tydligt med både barn och kollegor."
+      }
+    ]
+  }

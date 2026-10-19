@@ -2,9 +2,9 @@
   /* Variabler */
   :root {
     /* Färger */
-    --color-heading: #303030;
-    --color-text: #666;
-    --color-text-muted: #a7a7a7;
+    --color-bg: #FAF7F2;
+    --color-text: #1F1B17;
+    --color-text-muted: #6B625A;
     --color-text-strong: #000;
     --color-text-content: #666666;
     --color-border: #EBEAED;
@@ -16,6 +16,7 @@
     --color-surface: #fff;
 
     --color-primary: #FF9900;
+    --color-primary-text: #B35600;
 
     --shadow-card: 2px 2px 100px 0 rgba(0, 0, 0, 0.20);
 
@@ -78,7 +79,7 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    color: var(--color-heading);
+    color: var(--color-text);
     line-height: 1.2;
   }
 
@@ -169,9 +170,8 @@
 
   --color-bg: #191919;
   --color-surface: #363636;
-  --color-heading: #CCCCCC;
-  --color-text: #a7a7a7;
-  --color-text-content: #CCCCCC; /* I projekt korten */
+  --color-text: #FAF6F1;
+  --color-text-content: #D9D2C9; /* I projekt korten */
   
   --color-text-strong: #fff;
 
@@ -187,13 +187,13 @@
 
   --color-bg: #191919;
   --color-surface: #363636;
-  --color-heading: #CCCCCC;
-  --color-text: #a7a7a7;
-  --color-text-content: #CCCCCC; /* I projekt korten */
+  --color-text: #FAF6F1;
+  --color-text-content: #D9D2C9; /* I projekt korten */
   
   --color-text-strong: #fff;
 
   --color-text-hover: #fffdfd;
+ 
   .icon-invert {
     filter: invert(0.8);
   }

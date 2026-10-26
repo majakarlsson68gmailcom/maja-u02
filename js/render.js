@@ -1,3 +1,7 @@
+// Gör en renderList funktion som kan användas för både cv och projekt
+export function renderList(items, container, createItem){
+    container.replaceChildren(...items.map(createItem));
+}
 
 export function renderCVList(items, listElement){
     const cvItemTemplate = document.querySelector("#cv-item-template");
@@ -47,3 +51,38 @@ function formatPeriod(start, end){
     
 }
 
+
+export function createProjectCards( { name, description, topics = [], homepage, html_url }, images ) {
+    const projectTemplate = document.querySelector("#project-card-template");
+    const clone = projectTemplate.content.cloneNode(true);
+
+    const imgElement = clone.querySelector(".project-image");
+    const img = images[name] ?? images.placeholder;
+
+    imgElement.src = img.src;
+    imgElement.alt = img.alt;
+
+    const title = name.replaceAll("-", " ");
+    clone.querySelector(".project-card-title").textContent = title;
+    clone.querySelector(".project-description").textContent = description;
+
+    const pillContainer = clone.querySelector(".pill-container");
+    topics.forEach(topic => {
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        pill.textContent = topic;
+        pillContainer.append(pill);
+    });
+
+    const githubLink = clone.querySelector(".github-link");
+    githubLink.href = html_url;
+
+    const previewLink = clone.querySelector(".live-preview-link");
+    if(homepage) {
+        previewLink.href = homepage;
+    } else {
+        previewLink.remove();
+    }
+
+    return clone;
+}

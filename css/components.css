@@ -155,6 +155,15 @@ header {
     margin-bottom: 0;
   }
 
+  .pill {
+    font-size: var(--font-size-label);
+    font-weight: bold;
+    background-color: var(--color-badge-bg);
+    padding: 4px 8px;
+    border-radius: 99px;
+    color: var(--color-badge-text);
+}
+
 /* Desktop */
 
 @media (min-width: 56rem){

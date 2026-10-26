@@ -11,14 +11,12 @@
 
     /* Hover & interactios */
     --color-text-hover: #242424;
-
-    --color-bg: #fff;
-    --color-surface: #fff;
+    --color-surface: #f1f1f1;
 
     --color-primary: #FF9900;
     --color-primary-text: #B35600;
 
-    --shadow-card: 2px 2px 100px 0 rgba(0, 0, 0, 0.20);
+    --shadow-card: 0 24px 48px rgb(0 0 0 / 0.08);
 
     --color-badge-bg: #EAEAEA;
     --color-badge-text: #3F3F3F;

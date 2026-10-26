@@ -39,7 +39,7 @@ header {
 .header-actions{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--space-3);
 }
 
 .darkmode-toggle {
@@ -143,12 +143,6 @@ header {
     color: var(--color-primary-text);
   }
 
-  .icon {
-    width: 16px;
-    display: inline;
-    margin-right: var(--space-1);
-}
-
 .hero-heading {
     font-size: var(--font-size-display);
     margin-bottom: 0;
@@ -163,15 +157,45 @@ header {
     color: var(--color-badge-text);
 }
 
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
 .primary-btn {
+    background-color: var(--color-primary);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+.primary-btn:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.primary-btn:active {
+    background-color: var(--color-primary-active);
+}
+
+a.primary-btn {
     display: flex;
     align-items: center;
     gap: var(--space-2);
     text-decoration: none;
-    font-weight: 600;
-    background-color: var(--color-primary);
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
+    
+}
+
+.btn-outline {
+    border: 2px solid var(--color-text);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-outline:hover {
+    background-color: rgba(37, 99, 235, 0.08);
+}
+.btn-outline:active {
+    background-color: rgba(37, 99, 235, 0.18);
 }
 
 .icon {
@@ -207,7 +231,6 @@ header {
 /* Error message */
 .load-error {
     margin-top: var(--space-5);
-    gap: var(--space-2);
     padding: var(--space-6) var(--space-4);
     background-color: var(--color-surface);
     border-radius: 1rem;
@@ -229,15 +252,6 @@ header {
     gap: var(--space-2);
 }
 
-.retry-button {
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    border: 2px solid var(--color-text);
-    font-weight: 600;
-    cursor: pointer;
-}
-
-
 
 /* Desktop */
 
@@ -253,13 +267,10 @@ header {
     }
 
     .nav-mobile-container{
-        width: fit-content;
         display: contents;
     }
     .nav-container {
         flex-direction: row;
-        /* margin-top: calc(var(--space-4) * 3); */
-        align-items: center;
     }
 
     .nav-toggle {
@@ -277,16 +288,12 @@ header {
 
     .social-list {
         flex-direction: row;
-        align-items: center;
-        gap: var(--space-4);
         width: fit-content;
         margin: 0;
     }
 
     .social-icons {
         width: 100%;
-        max-width: 32px;
-        max-height: 32px;
         aspect-ratio: 1 / 1;
     }
 

@@ -9,7 +9,7 @@ const cvError = document.querySelector("#cv-error");
 export async function initCV() {
   if (!cvListWork || !cvListEducation) return;
 
-  cvError.querySelector(".retry-button").addEventListener("click", loadCvLists);
+  cvError.querySelector(".retry-btn").addEventListener("click", loadCvLists);
 
   loadCvLists();
 }

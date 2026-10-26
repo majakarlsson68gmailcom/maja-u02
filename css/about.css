@@ -1,11 +1,12 @@
 
 .about-me ul {
     max-width: 705px;
-    li {
-        margin-top: var(--space-5);
-        border-bottom: 1px solid var(--color-border);
-        padding-block: var(--space-4);
-    }
+}
+
+.cv-item {
+    margin-top: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: var(--space-4);
 }
 
 .cv-lists {
@@ -27,15 +28,6 @@
         margin-top: var(--space-1);
         margin-bottom: var(--space-4);
     }
-    
-    .pill {
-        font-size: var(--font-size-label);
-        font-weight: bold;
-        background-color: var(--color-badge-bg);
-        padding: 4px 8px;
-        border-radius: 99px;
-        color: var(--color-badge-text);
-    }
 }
 
 .cv-item-meta {
@@ -53,47 +45,10 @@
     }
 
     .icon {
-        width: 16px;
+        margin-right: var(--space-1);
     }
 }
-
-
-
-/* .work-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-2);
-    h3 {
-        font-weight: 300;
-        margin-bottom: 0;
-    }
-} */
-
-/* .pill {
-    font-size: var(--font-size-label);
-    font-weight: 500;
-    background-color: var(--color-badge-bg);
-    color: var(--color-badge-text);
-    padding: 4px 12px;
-    border-radius: 50px;
-}
-
-.work-details {
-    font-size: var(--font-size-small);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    .date {
-        grid-column: 2;
-        grid-row: 1;
-    }
-} */
-
-
 
 @media (min-width: 56rem) {
-    .work-details {
-        display: flex;
-        justify-content: space-between;
-    }
+ 
 }

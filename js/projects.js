@@ -9,7 +9,7 @@ export async function initProjects() {
   if (!projectContainer) return;
 
   projectsError
-    .querySelector(".retry-button")
+    .querySelector(".retry-btn")
     .addEventListener("click", loadProjects);
 
   loadProjects();

@@ -8,6 +8,6 @@ async function fetchData(url) {
 
 export const loadCV = () => fetchData(new URL("/data/cv.json", import.meta.url));
 
-export const loadRepos = () => fetchData("https://api.github.com/users/majaarlsson68gmailcom/repos");
+export const loadRepos = () => fetchData("https://api.github.com/users/majakarlsson68gmailcom/repos");
 
 export const loadImages = () => fetchData(new URL("/data/projects.json", import.meta.url));

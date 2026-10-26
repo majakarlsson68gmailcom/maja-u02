@@ -5,7 +5,6 @@
     --color-bg: #FAF7F2;
     --color-text: #1F1B17;
     --color-text-muted: #6B625A;
-    --color-text-strong: #000;
     --color-text-content: #666666;
     --color-border: #EBEAED;
 
@@ -15,8 +14,11 @@
 
     --color-primary: #FF9900;
     --color-primary-text: #B35600;
+    --color-primary-hover: #fdaa2e;
+    --color-primary-active: #fbb54d;
 
     --shadow-card: 0 24px 48px rgb(0 0 0 / 0.08);
+    --shadow-image: 0 16px 32px rgb(0 0 0 / 0.15);
 
     --color-badge-bg: #EAEAEA;
     --color-badge-text: #3F3F3F;
@@ -37,7 +39,7 @@
     --font-size-500: 1.25rem;
     --font-size-600: 1.5rem;
     --font-size-700: 2.625rem;
-    --font-size-800: 3.625rem;
+
     /* Roll */
 
     --font-size-label: var(--font-size-100);
@@ -62,6 +64,9 @@
   }
 
   /* Generella regler */
+
+  html { scroll-padding-top: 80px; }
+  
   body {
     background-color: var(--color-bg);
     font-family: var(--font-body);
@@ -103,7 +108,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-heading);
+    outline: 2px solid var(--color-text);
     outline-offset: 3px;
   }
 
@@ -154,10 +159,6 @@
     --section-space-block: var(--space-7);
   }
 
-  /* mindre text än body, bara på desktop */
-  .fs-small {
-    font-size: var(--font-size-300);
-  }
 }
 
 

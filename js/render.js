@@ -1,4 +1,4 @@
-// Gör en renderList funktion som kan användas för både cv och projekt
+
 export function renderList(items, container, createItem){
     container.replaceChildren(...items.map(createItem));
 }

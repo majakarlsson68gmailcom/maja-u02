@@ -8,3 +8,11 @@ export async function loadCV(){
     const cv = await response.json();
     return cv;
 }
+
+export async function loadRepos() {
+    
+}
+
+export async function loadImages() {
+    
+}

@@ -109,8 +109,7 @@ header {
 
 /* Öppna/stänga menyn */
 
-.nav-container.is-open .nav-list,
-.nav-container.is-open .social-list {
+.nav-container:has(.nav-toggle[aria-expanded="true"]) :is(.nav-list, .social-list) {
     display: flex;
     padding-bottom: 1rem;
 }

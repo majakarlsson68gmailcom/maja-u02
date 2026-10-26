@@ -10,14 +10,13 @@ export function initNav(){
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
 
     toggle.setAttribute("aria-expanded", String(!isOpen));
-    navContainer.classList.toggle("is-open");
+   
   });
 
   // Stäng naven när man klickar på projects (sidan laddas inte om)
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       toggle.setAttribute("aria-expanded", "false");
-      navContainer.classList.remove("is-open");
     });
   });
 }

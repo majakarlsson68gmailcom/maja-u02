@@ -164,6 +164,82 @@ header {
     color: var(--color-badge-text);
 }
 
+.primary-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+}
+
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+/* Skeleton loading */
+
+.skeleton {
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
+    border-radius: 12px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: 0.4; }
+}
+
+.skeleton-title { height: 1.5rem; width: 60%; }
+.skeleton-small { height: 0.875rem; width: 40%; margin-bottom: var(--space-1);}
+.skeleton-text { height: 1rem; margin-top: var(--space-1) }
+.skeleton-text:last-child { width: 70%; }
+.skeleton-pill { 
+    display: inline-block;
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 999px;
+}
+
+/* Error message */
+.load-error {
+    margin-top: var(--space-5);
+    gap: var(--space-2);
+    padding: var(--space-6) var(--space-4);
+    background-color: var(--color-surface);
+    border-radius: 1rem;
+}
+
+.load-error-title {
+    font-weight: 600;
+    font-size: var(--font-size-heading-sm);
+}
+.load-error-message {
+    max-width: 40ch;
+    opacity: 0.8;
+}
+
+.load-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+    gap: var(--space-2);
+}
+
+.retry-button {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
 /* Desktop */
 
 @media (min-width: 56rem){
@@ -238,3 +314,6 @@ footer {
     text-align: center;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .skeleton { animation: none; }
+}

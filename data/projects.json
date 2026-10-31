@@ -1,42 +1,55 @@
 {
     "note-taking-app": {
-      "src": "assets/images/note-taking-app.webp",
-      "alt": "Note taking app with form for entering an note",
-      "isMyPick": true
+      "isMyPick": true,
+      "image": {
+        "src": "assets/images/note-taking-app.webp",
+        "alt": "Note taking app with form for entering a note"
+      }
     },
     "traningslogg": {
+      "isMyPick": true,
+      "image": {
         "src": "assets/images/traningslogg.webp",
-        "alt": "Training application with example program",
-        "isMyPick": true
+        "alt": "Training application with example program"
+      }
     },
     "workshop-pig-game-grupp-maja-johanna": {
+      "isMyPick": true,
+      "image": {
         "src": "assets/images/pig-game.webp",
-        "alt": "Pig game app",
-        "isMyPick": true
+        "alt": "Pig game app"
+      }
     },
     "interactive-rating-component": {
+      "isMyPick": false,
+      "image": {
         "src": "assets/images/interactive-component.webp",
-        "alt": "rating card with stars",
-        "isMyPick": false
+        "alt": "Rating card with stars"
+      }
     },
     "calculator": {
+      "isMyPick": false,
+      "image": {
         "src": "assets/images/calculator.webp",
-        "alt": "Digital calculator application",
-        "isMyPick": false
+        "alt": "Digital calculator application"
+      }
     },
     "library": {
+      "isMyPick": false,
+      "image": {
         "src": "assets/images/book-library.webp",
-        "alt": "Book library applications with one books added",
-        "isMyPick": false
+        "alt": "Book library application with one book added"
+      }
     },
     "ai-descision-support": {
+      "isMyPick": true,
+      "image": {
         "src": "assets/images/ai-decision-support.webp",
-        "alt": "View of the start panel of the application",
-        "isMyPick": true
+        "alt": "View of the start panel of the application"
+      }
     },
     "placeholder": {
-        "src": "assets/images/placeholder.webp",
-        "alt": ""
+      "src": "assets/images/placeholder.webp",
+      "alt": ""
     }
-    
   }

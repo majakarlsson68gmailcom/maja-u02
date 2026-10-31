@@ -107,6 +107,46 @@
 }
 
 
+/* Filter bar i project section */
+.filter-bar {
+    border: none;
+    min-inline-size: 0;
+    margin-top: var(--space-4);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    legend {
+        margin-bottom: var(--space-2);
+    }
+}
+
+.filter-pill {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+
+    border-radius: 999px;
+
+    transition: 
+        transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.filter-pill[aria-pressed="true"] {
+    background-color: var(--color-primary);
+    transform: scale(1.03);
+}
+
+.filter-pill[aria-pressed="false"]:hover {
+    background-color: var(--color-primary-hover);
+    transform: scale(1.02);
+}
+
 @media (min-width: 63rem) {
 
     html {

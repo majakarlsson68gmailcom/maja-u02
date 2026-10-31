@@ -16,19 +16,7 @@ export async function initProjects() {
     .querySelector(".retry-btn")
     .addEventListener("click", loadProjects);
 
-  filterBar.addEventListener("click", (e) => {
-    const button = e.target.closest(".filter-pill");
-    if(!button) return;
-
-    filterBar.querySelectorAll(".filter-pill")
-    .forEach(pill => pill.setAttribute("aria-pressed", "false"));
-
-    button.setAttribute("aria-pressed", "true");
-
-    const filtered = filterProjects(allProjects, button.dataset.filter);
-    renderList(filtered, projectContainer, (repo) => createProjectCards(repo));
-  })
-
+  filterBar.addEventListener("click", handleFilterClick);
 
   loadProjects();
 }
@@ -42,28 +30,26 @@ async function loadProjects() {
     const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
 
     const projects = repos
-    .filter((repo) => repo.description)
-    .map((repo) => {
-      const moreInfo = meta[repo.name];
-      return {
-        ...repo, // Kopiera allt från repo med spread
-        topics: repo.topics ?? [], // Skydd om repo saknar topics
-        isMyPick: moreInfo?.isMyPick ?? false, // finns is isMyPick? annars sätt till false
-        image: moreInfo?.image ?? meta.placeholder,
-      }
-    });
+      .filter((repo) => repo.description)
+      .map((repo) => {
+        const moreInfo = meta[repo.name];
+        return {
+          ...repo, // Kopiera allt från repo med spread
+          topics: repo.topics ?? [], // Skydd om repo saknar topics
+          isMyPick: moreInfo?.isMyPick ?? false, // finns is isMyPick? annars sätt till false
+          image: moreInfo?.image ?? meta.placeholder,
+        };
+      });
 
     allProjects = projects;
 
     if (projects.length === 0) {
-        projectContainer.replaceChildren();
-        projectsEmpty.hidden = false;
-        return;
+      projectContainer.replaceChildren();
+      projectsEmpty.hidden = false;
+      return;
     }
 
-    renderList(projects, projectContainer, (repo) =>
-      createProjectCards(repo),
-    );
+    renderList(projects, projectContainer, (repo) => createProjectCards(repo));
   } catch (error) {
     console.error(error);
     projectContainer.replaceChildren();
@@ -71,3 +57,16 @@ async function loadProjects() {
   }
 }
 
+function handleFilterClick(e) {
+  const button = e.target.closest(".filter-pill");
+  if (!button) return;
+
+  filterBar
+    .querySelectorAll(".filter-pill")
+    .forEach((pill) => pill.setAttribute("aria-pressed", "false"));
+
+  button.setAttribute("aria-pressed", "true");
+
+  const filtered = filterProjects(allProjects, button.dataset.filter);
+  renderList(filtered, projectContainer, (repo) => createProjectCards(repo));
+}

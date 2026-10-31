@@ -1,31 +1,38 @@
 {
     "note-taking-app": {
       "src": "assets/images/note-taking-app.webp",
-      "alt": "Note taking app with form for entering an note"
+      "alt": "Note taking app with form for entering an note",
+      "isMyPick": true
     },
     "traningslogg": {
         "src": "assets/images/traningslogg.webp",
-        "alt": "Training application with example program"
+        "alt": "Training application with example program",
+        "isMyPick": true
     },
     "workshop-pig-game-grupp-maja-johanna": {
         "src": "assets/images/pig-game.webp",
-        "alt": "Pig game app"
+        "alt": "Pig game app",
+        "isMyPick": true
     },
     "interactive-rating-component": {
         "src": "assets/images/interactive-component.webp",
-        "alt": "rating card with stars"
+        "alt": "rating card with stars",
+        "isMyPick": false
     },
     "calculator": {
         "src": "assets/images/calculator.webp",
-        "alt": "Digital calculator application"
+        "alt": "Digital calculator application",
+        "isMyPick": false
     },
     "library": {
         "src": "assets/images/book-library.webp",
-        "alt": "Book library applications with one books added"
+        "alt": "Book library applications with one books added",
+        "isMyPick": false
     },
     "ai-descision-support": {
         "src": "assets/images/ai-decision-support.webp",
-        "alt": "View of the start panel of the application"
+        "alt": "View of the start panel of the application",
+        "isMyPick": true
     },
     "placeholder": {
         "src": "assets/images/placeholder.webp",

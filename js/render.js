@@ -18,10 +18,8 @@ export function createProjectCards( { name, description, topics = [], homepage, 
     const clone = projectTemplate.content.cloneNode(true);
 
     const imgElement = clone.querySelector(".project-image");
-    const img = image ?? image.placeholder;
-
-    imgElement.src = img.src;
-    imgElement.alt = img.alt;
+    imgElement.src = image.src;
+    imgElement.alt = image.alt;
 
     const title = name.replaceAll("-", " ");
     clone.querySelector(".project-card-title").textContent = title;

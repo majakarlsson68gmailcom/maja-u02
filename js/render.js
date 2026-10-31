@@ -72,10 +72,10 @@ export function createCvItem({organization, type, title, description, start, end
 
 export function renderSkeletons(container, templateSelector, count) {
     const template = document.querySelector(templateSelector);
-    const clone = template.content.cloneNode(true);
     container.replaceChildren();
 
     for (let i = 0; i < count; i++) {
+        const clone = template.content.cloneNode(true);
         container.append(clone);
     }
 }

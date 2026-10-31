@@ -47,6 +47,7 @@ async function loadProjects() {
       const moreInfo = meta[repo.name];
       return {
         ...repo, // Kopiera allt från repo med spread
+        topics: repo.topics ?? [], // Skydd om repo saknar topics
         isMyPick: moreInfo?.isMyPick ?? false, // finns is isMyPick? annars sätt till false
         image: moreInfo?.image ?? meta.placeholder,
       }

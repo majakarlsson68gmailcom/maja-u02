@@ -99,9 +99,20 @@
         <section class="container section projects" id="projects">
             <h2>Projects</h2>
             <p>Things I'v built so far</p>
+
+            <fieldset class="filter-bar">
+                <legend>Filter projects</legend>
+                <button type="button" class="filter-pill" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-pill" data-filter="my-pick" aria-pressed="false">My Picks</button>
+                <button type="button" class="filter-pill" data-filter="development" aria-pressed="false">Development</button>
+                <button type="button" class="filter-pill" data-filter="ux" aria-pressed="false">UX & Design</button>
+            </fieldset>
+            <p role="status" class="filter-status visually-hidden"></p>
                <ul class="project-card-container" role="list"></ul>
 
                <!-- Empty state -->
+            <p class="filter-empty" hidden>No projects in this categort yet.</p>
+
                 <p class="projects-empty" hidden>No projects to show yet. Check back soon!</p>
                 <div role="alert">
                     <div class="load-error" id="projects-error" hidden>

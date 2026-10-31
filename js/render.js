@@ -13,12 +13,12 @@ function formatPeriod(start, end){
 }
 
 
-export function createProjectCards( { name, description, topics = [], homepage, html_url }, images ){
+export function createProjectCards( { name, description, topics = [], homepage, html_url, image } ){
     const projectTemplate = document.querySelector("#project-card-template");
     const clone = projectTemplate.content.cloneNode(true);
 
     const imgElement = clone.querySelector(".project-image");
-    const img = images[name] ?? images.placeholder;
+    const img = image ?? image.placeholder;
 
     imgElement.src = img.src;
     imgElement.alt = img.alt;

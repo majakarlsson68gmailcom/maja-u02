@@ -1,9 +1,11 @@
-import { loadRepos, loadImages } from "./api.js";
+import { loadRepos, loadProjectMeta } from "./api.js";
 import { renderList, createProjectCards, renderSkeletons } from "./render.js";
 
 const projectContainer = document.querySelector(".project-card-container");
 const projectsError = document.querySelector("#projects-error");
 const projectsEmpty = document.querySelector(".projects-empty");
+
+let allProjects = [];
 
 export async function initProjects() {
   if (!projectContainer) return;
@@ -21,9 +23,20 @@ async function loadProjects() {
   renderSkeletons(projectContainer, "#project-skeleton-template", 3);
 
   try {
-    const [repos, images] = await Promise.all([loadRepos(), loadImages()]);
+    const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
 
-    const projects = repos.filter((repo) => repo.description);
+    const projects = repos
+    .filter((repo) => repo.description)
+    .map((repo) => {
+      const moreInfo = meta[repo.name];
+      return {
+        ...repo, // Kopiera allt från repo med spread
+        isMyPick: moreInfo?.isMyPick ?? false, // finns is isMyPick? annars sätt till false
+        image: moreInfo?.image ?? meta.placeholder,
+      }
+    });
+
+    allProjects = projects;
 
     if (projects.length === 0) {
         projectContainer.replaceChildren();
@@ -32,7 +45,7 @@ async function loadProjects() {
     }
 
     renderList(projects, projectContainer, (repo) =>
-      createProjectCards(repo, images),
+      createProjectCards(repo),
     );
   } catch (error) {
     console.error(error);

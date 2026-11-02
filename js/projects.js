@@ -24,6 +24,7 @@ export async function initProjects() {
 }
 
 async function loadProjects() {
+  filterBar.hidden = false;
   projectsError.hidden = true;
   projectsEmpty.hidden = true;
   renderSkeletons(projectContainer, "#project-skeleton-template", 3);

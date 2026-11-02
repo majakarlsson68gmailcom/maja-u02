@@ -6,6 +6,8 @@ const projectContainer = document.querySelector(".project-card-container");
 const projectsError = document.querySelector("#projects-error");
 const projectsEmpty = document.querySelector(".projects-empty");
 const filterBar = document.querySelector(".filter-bar");
+const filterStatusEl = document.querySelector(".filter-status");
+const statusEmpty = document.querySelector(".filter-empty");
 
 let allProjects = [];
 
@@ -48,8 +50,8 @@ async function loadProjects() {
       projectsEmpty.hidden = false;
       return;
     }
-
-    renderList(projects, projectContainer, (repo) => createProjectCards(repo));
+    renderProjects(allProjects);
+   
   } catch (error) {
     console.error(error);
     projectContainer.replaceChildren();
@@ -68,5 +70,12 @@ function handleFilterClick(e) {
   button.setAttribute("aria-pressed", "true");
 
   const filtered = filterProjects(allProjects, button.dataset.filter);
-  renderList(filtered, projectContainer, (repo) => createProjectCards(repo));
+  renderProjects(filtered);
+}
+
+function renderProjects(projects){
+  renderList(projects, projectContainer, (repo) => createProjectCards(repo));
+  
+  filterStatusEl.textContent = `Showing ${projects.length} ${projects.length === 1 ? "project" : "projects"}`;
+  statusEmpty.hidden = projects.length > 0;
 }

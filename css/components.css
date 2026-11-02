@@ -149,7 +149,7 @@ header {
   }
 
   .pill {
-    font-size: var(--font-size-label);
+    font-size: var(--font-size-small);
     font-weight: bold;
     background-color: var(--color-badge-bg);
     padding: 4px 8px;

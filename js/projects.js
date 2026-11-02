@@ -27,6 +27,7 @@ async function loadProjects() {
   projectsError.hidden = true;
   projectsEmpty.hidden = true;
   renderSkeletons(projectContainer, "#project-skeleton-template", 3);
+  filterBar.disabled = true;
 
   try {
     const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
@@ -51,11 +52,13 @@ async function loadProjects() {
       return;
     }
     renderProjects(allProjects);
+    filterBar.disabled = false;
    
   } catch (error) {
     console.error(error);
     projectContainer.replaceChildren();
     projectsError.hidden = false;
+    filterBar.hidden = true;
   }
 }
 

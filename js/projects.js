@@ -1,5 +1,5 @@
 import { loadRepos, loadProjectMeta } from "./api.js";
-import { renderList, createProjectCards, renderSkeletons } from "./render.js";
+import { renderList, createProjectCards, renderSkeletons, renderErrorMessage } from "./render.js";
 import { filterProjects } from "./filter.js";
 
 const projectContainer = document.querySelector(".project-card-container");
@@ -59,15 +59,8 @@ async function loadProjects() {
     console.error(error);
     projectContainer.replaceChildren();
 
-    const projectsErrorMessage = document.querySelector(".load-error-message"); 
-
-    if (error.name === "TimeoutError") {
-      projectsErrorMessage.textContent = "It's taking longer than usual to load. Try again in a moment.";
-    } else {
-      projectsErrorMessage.textContent = "Something went wrong while fetching the projects. Try again, or browse my work directly on Github.";
-    }
-
-    projectsError.hidden = false;
+    renderErrorMessage(projectsError, error, "Something went wrong while fetching the projects. Try again, or browse my work directly on Github.");
+    
     filterBar.hidden = true;
   }
 }

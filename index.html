@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/home.css">
 
-    <script type="module" src="index.js" defer></script>
+    <script type="module" src="index.js"></script>
 
 </head>
 <body>
@@ -108,7 +108,51 @@
                 <button type="button" class="filter-pill" data-filter="ux-design" aria-pressed="false">UX & Design</button>
             </fieldset>
             <p role="status" class="filter-status"></p>
-               <ul class="project-card-container" role="list"></ul>
+
+               <ul class="project-card-container" role="list">
+                <li aria-hidden="true">
+                    <article class="project-card">
+                        <div class="image-wrapper skeleton"></div>
+                        <div class="project-card-content">
+                            <div class="skeleton skeleton-title"></div>
+                            <div class="pill-container">
+                                <span class="skeleton skeleton-pill"></span>
+                                <span class="skeleton skeleton-pill"></span>
+                            </div>
+                            <div class="skeleton skeleton-text"></div>
+                            <div class="skeleton skeleton-text"></div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-hidden="true">
+                    <article class="project-card">
+                        <div class="image-wrapper skeleton"></div>
+                        <div class="project-card-content">
+                            <div class="skeleton skeleton-title"></div>
+                            <div class="pill-container">
+                                <span class="skeleton skeleton-pill"></span>
+                                <span class="skeleton skeleton-pill"></span>
+                            </div>
+                            <div class="skeleton skeleton-text"></div>
+                            <div class="skeleton skeleton-text"></div>
+                        </div>
+                    </article>
+                </li>
+                <li aria-hidden="true">
+                    <article class="project-card">
+                        <div class="image-wrapper skeleton"></div>
+                        <div class="project-card-content">
+                            <div class="skeleton skeleton-title"></div>
+                            <div class="pill-container">
+                                <span class="skeleton skeleton-pill"></span>
+                                <span class="skeleton skeleton-pill"></span>
+                            </div>
+                            <div class="skeleton skeleton-text"></div>
+                            <div class="skeleton skeleton-text"></div>
+                        </div>
+                    </article>
+                </li>
+               </ul>
 
                <!-- Empty state -->
             <p class="filter-empty" hidden>No projects in this category yet.</p>

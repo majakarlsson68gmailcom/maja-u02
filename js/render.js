@@ -1,5 +1,4 @@
-
-
+const TIMEOUT_MESSAGE = "It's taking longer than usual to load. Try again in a moment.";
 
 export function renderList(items, container, createItem) {
   container.replaceChildren(...items.map(createItem));
@@ -92,3 +91,9 @@ export function renderSkeletons(container, templateSelector, count) {
   }
 }
 
+export function renderErrorMessage(errorContainer, error, falbackMessage) {
+  const message = error.name === "TimeoutError" ? TIMEOUT_MESSAGE : falbackMessage;
+  const messageEl = errorContainer.querySelector(".load-error-message");
+  messageEl.textContent = message;
+  errorContainer.hidden = false;
+}

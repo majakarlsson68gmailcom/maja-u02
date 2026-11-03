@@ -1,6 +1,6 @@
 
-async function fetchData(url) {
-    const response = await fetch(url);
+async function fetchData(url, timeout = 8000) {
+    const response = await fetch(url, { signal: AbortSignal.timeout(timeout)});
     if(!response.ok) throw new Error(`Kunde inte hämta ${url}: ${response.status}`);
     return response.json();
 }

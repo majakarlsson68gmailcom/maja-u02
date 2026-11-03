@@ -1,3 +1,6 @@
+
+
+
 export function renderList(items, container, createItem) {
   container.replaceChildren(...items.map(createItem));
 }
@@ -88,3 +91,4 @@ export function renderSkeletons(container, templateSelector, count) {
     container.append(clone);
   }
 }
+

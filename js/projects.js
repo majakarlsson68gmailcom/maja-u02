@@ -58,6 +58,15 @@ async function loadProjects() {
   } catch (error) {
     console.error(error);
     projectContainer.replaceChildren();
+
+    const projectsErrorMessage = document.querySelector(".load-error-message"); 
+
+    if (error.name === "TimeoutError") {
+      projectsErrorMessage.textContent = "It's taking longer than usual to load. Try again in a moment.";
+    } else {
+      projectsErrorMessage.textContent = "Something went wrong while fetching the projects. Try again, or browse my work directly on Github.";
+    }
+
     projectsError.hidden = false;
     filterBar.hidden = true;
   }

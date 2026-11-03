@@ -1,13 +1,13 @@
 import { loadRepos, loadProjectMeta } from "./api.js";
-import { renderList, createProjectCards, renderSkeletons, renderErrorMessage } from "./render.js";
+import { renderList, createProjectCard, renderSkeletons, renderErrorMessage } from "./render.js";
 import { filterProjects } from "./filter.js";
 
 const projectContainer = document.querySelector(".project-card-container");
 const projectsError = document.querySelector("#projects-error");
 const projectsEmpty = document.querySelector(".projects-empty");
 const filterBar = document.querySelector(".filter-bar");
-const filterStatusEl = document.querySelector(".filter-status");
-const statusEmpty = document.querySelector(".filter-empty");
+const filterStatus = document.querySelector(".filter-status");
+const filterEmpty = document.querySelector(".filter-empty");
 
 let allProjects = [];
 
@@ -60,7 +60,7 @@ async function loadProjects() {
     projectContainer.replaceChildren();
 
     renderErrorMessage(projectsError, error, "Something went wrong while fetching the projects. Try again, or browse my work directly on Github.");
-    
+
     filterBar.hidden = true;
   }
 }
@@ -80,8 +80,8 @@ function handleFilterClick(e) {
 }
 
 function renderProjects(projects){
-  renderList(projects, projectContainer, (repo) => createProjectCards(repo));
+  renderList(projects, projectContainer, (repo) => createProjectCard(repo));
   
-  filterStatusEl.textContent = `Showing ${projects.length} ${projects.length === 1 ? "project" : "projects"}`;
-  statusEmpty.hidden = projects.length > 0;
+  filterStatus.textContent = `Showing ${projects.length} ${projects.length === 1 ? "project" : "projects"}`;
+  filterEmpty.hidden = projects.length > 0;
 }

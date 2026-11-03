@@ -12,7 +12,7 @@ function formatPeriod(start, end) {
   return `${start} - ${end}`;
 }
 
-export function createProjectCards({
+export function createProjectCard({
   name,
   description,
   topics,
@@ -91,8 +91,8 @@ export function renderSkeletons(container, templateSelector, count) {
   }
 }
 
-export function renderErrorMessage(errorContainer, error, falbackMessage) {
-  const message = error.name === "TimeoutError" ? TIMEOUT_MESSAGE : falbackMessage;
+export function renderErrorMessage(errorContainer, error, fallbackMessage) {
+  const message = error.name === "TimeoutError" ? TIMEOUT_MESSAGE : fallbackMessage;
   const messageEl = errorContainer.querySelector(".load-error-message");
   messageEl.textContent = message;
   errorContainer.hidden = false;

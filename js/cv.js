@@ -18,8 +18,8 @@ export async function initCV() {
 async function loadCvLists() {
   cvError.hidden = true;
   cvLists.hidden = false;
-  renderSkeletons(cvListWork, "#cv-skeleton-template", 2);
-  renderSkeletons(cvListEducation, "#cv-skeleton-template", 2);
+  renderSkeletons(cvListWork, "#cv-skeleton-template", 3);
+  renderSkeletons(cvListEducation, "#cv-skeleton-template", 3);
 
   try {
     const cvData = await loadCV();

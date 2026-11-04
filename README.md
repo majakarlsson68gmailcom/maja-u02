@@ -1,40 +1,84 @@
-**Länk till sidan:** https://maja-frontendutveckling-u01.netlify.app/
-# Tillvägagångssätt
-Jag började med att kika på skissen, vilka färger används, spacing och textstorlek och omvandlade sedan det till CSS variabler. Därefter tittade jag på webbsidans struktur för att veta hur jag bör strukturera mina element i HTML. Efter att jag tagit fram den första sidan (index.html) skapade jag reset.css för att ta bort den mesta default stylingen. Sedan började jag skriva cssen för första sidan. Jag designade först hur det skulle se ut i mobilvy och sedan i desktop. Navigationen var svårast att översätta till kod. Jag upplevde mobilvyn som mer komplicerad, vilket gjorde att jag behövde skriva över många regler i desktopvyn. Just för navigationsdelen tror jag att desktop kan ha varit lättare att börja med och då haft en media query för mobilvyn. 
-Skissen hade några element som inte klara tillgänglighetskraven i WCAG, så några designbeslut tog jag på egen för att uppfylla kraven.
+# Portfolio - u02
+**Länk till sidan:** https://maja-u02.vercel.app/
 
-# Semantik
-Sidans delar ligger i `header`, `nav`, `main` och `footer` så att skärmläsare kan hoppa mellan dem, och rubrikerna går från en `h1` per sida till `h2` för sektioner och `h3` för projektkorten.
+**Jag siktar på VG.** 
 
-Jag använde mig av `div` när jag behövde gruppera element utan semantisk betydelse för att underlätta styling. Exempelvis i navigationen för enklare kunna styla mobilvyn både stängt och öppet läge. Jag använde också `div` element i about.html för att styla listorna. 
+## Datans väg
+När `loadProjects()` körs startar `Promise.all`. Det gör två anrop samtidigt till GitHub och `projects.json` och returnerar ett enda promise, istället för att köras en efter en. Väntetiden blir då lika lång som det långsammaste anropen. 
 
-Det var även några ställen som jag gick in och ändrade i efterhand för att öka tillgängligheten och använda de korrekta semantiska elementen. Blandannat för projektkorten och tech stack/tools ikonerna. Jag ansåg att projektkorten bättre passar som `article` eftersom innehållet kan stå för sig självt. Korten låg också direkt i en `div` som fungerade som en container. Ja la de sedan i en `ul` eftersom de är en samling av olika projekt. Då vet även användare som använder skärmläsare hur många project som finns i listan. 
+`fetchData()`i `api.js` skickar en GET-request till Github API. Jag lade till `?sort=pushed&direction=desc` på `/repos`-endpointen. API:et skickar bara 30 repos per anrop, så sorteringen gör att de senast pushade alltid kommer med. Svaret består av en statuskod, headers, och en body med en JSON-array av repo-objekt. Eftersom `fetch` bara kastar fel vid nätverksfel så kontrolleras svaret med `response.ok` och kastar ett eget fel vid exempelvis servern inte kan inte filen eller åtkomsten är nekad. `response.json()` gör om bodyn till en JS-array. 
 
-Jag använde `button`istället för en länk för hamburgemenyn eftersom den gör en handling och inte hänvisar till en annan sida. För de resterande interaktiva elementet använde jag `a`taggen eftersom de består av länkar, alltså tar användaren vidare någon stans. 
+I `project.js`slår jag ihop varje repo med min metadata (mina bilder och om jag markerat den som "mitt val"). Projekt korten byggs sedan från en `<template>`, filtret aktiveras och statusraden visar antalet projekt. 
 
-# Layout
-Jag använde mestadels flexbox. Projektkorten och techstacken ligger i grid, däremot är innehållet i projektkorten stylade med flexbox.  Först använde jag flexbox för metadatan i listan för tidigare erfarenheter men bytte sedan till grid. Detta pågrund av att i mobilvy ligger texterna och ikonerna i en tvådimensionell layout, vilket gjorde det lättare genom grid. 
-Jag använde mig av rem i mina media queries. Då följer brytpunkterna med när användaren förstorar texten i webbläsaren. Jag använde också rem för spacing, vilket gör att avstånden skalas tillsammans med texten. Jag valde brytpunkterna 56rem och 63rem utifrån sidans innehåll. Där texten radbröts eller layouten såg kosntig ut lade jag in en media query. Projektgridet fick en brytpunkt på 63rem. Vid 56rem var korten så smala att länkarna radbröts.
-Här hade en container query passat bättre, då det handlade om att kortet blir för smalt och egentligen inte fönstret. 
+## Två data källor
+CV:t ligger i en JSON-fil, så fälten är kända. Anropet kan ändå misslyckas, till exempel om sökvägen är fel. Därför har CV:t samma laddnings- och felmeddelande som projekten.
 
-# Tillgänglighet
-Något jag märkte när jag byggde portfolion är att det är lätt att glömma tillgängligheten, framför allt hur innehållet faktiskt läses upp för de som använder skärmläsare.
-Jag satte också `role="list"` på listorna, eftersom vissa webbläsare slutar läsa upp en `ul` som lista när den har `list-style: none`. 
-Den gröna pillen på about me sidan justerade jag då de inte klara tillgänglighetskraven när de kommer till kontrast. Jag valde en mörkare grön textfärg, vilket höjde kontrasten från 4,1:1 till 6,8:1. Jag ökade också textstorleken från 9 px till 11 px för att öka läsbarheten.
-Jag testade giltigheten av html-filerna genom att använda https://validator.w3.org/#validate_by_uri.  Validatorn varnar för att jag satt attribut `role="list`på mina `ul`element. Jag behöll det eftersom VoiceOver i Safari annars inte läser upp det som en lista. Jag använde mig även av https://webaim.org/resources/contrastchecker/ för att kolla färgkonstraster som var svåra att se i chrome devtools tex den gröna pillen. Jag använde mig också av lighthouse i Chrome DevTools. Utifrån resultatet valde jag att reducera mina bildstorlekar samt byta format på en av bilderna från jpg till WebP. Jag tabbade igenom alla sidor för att se att allt är nåbart med tangenbord och att fokusmarkering syns. 
+Github kan dock vara långsamt, stängas av efter ett visst antal anrop eller skicka `null` i fält som jag kanske tror finns. Repon utan beskrivning sorterar jag bort med `filter()`, eftersom jag inte vill visa dem i portfolion och kortet annars hade fått ett tomt beskrivningsfält. `topics` får `?? []` som reservvärde, och live-länken tas bort om `homepage` saknas. All text sätts med `textContent`, vilket skyddar mot XSS, det vill säga att innehåll från API:et aldrig kan köras som kod på sidan.
 
-Jag valde att inte använda en media query för reduce-motion då jag endast har en liten animation på hamburger-menyn. Detta är därmot något jag bör lägga till, framförallt om mer animationer tillkommer. 
+Filtreringen via kategorier utgår ifrån topics från Github, så nya repon hamnar rätt automatiskt. Däremot behövde My Picks och bidlerna ligga i en json fil eftersom Github inte vet vilka repon som borde vara "My Picks" eller vilka bilder jag vill ha. Jag hade nog kunna lägga in bilder direkt i repot på Github, men för detta projekt ansåg jag att det fungerar bra att lägga dem i json. 
 
-# Användbarhet
-Jag mätte inte hur långa textraderna är i skissen, men jag satte en `max-width` på 65ch för att hålla raderna korta och läsbara. 
+## DOM och händelser
+All rendering sker genom `renderList()`. Från början skapade funktionen korten och rendera dem, men jag delade upp det i två funktioner. Det gjorde att samma rendering även fungera för CV:et, projekten och filtreringen. 
 
-# Styrkor och brister
-Jag valde att lägga about me, contact och techstack i egna html sidor. Nackdelen med detta är att element som ska vara samma på varje sida och måste uppdateras på flera ställen. Jag märkte detta när jag hade ändrat navigationsbaren på index.html. Det var inte förens senare jag upptäckte att navigationen inte var detsamma på alla sidor och behövde därför uppdatera den på de andra sidorna.
+Jag använde mig av event delegation för filtret genom att sätta en lyssnare på `<fieldset>` istället för på varje knapp.  Knappen för att försöka igen kopplas en gång i `initProjects()`. Om jag hade kopplat den i `loadProjects()` hade varje nytt försök lagt till ännu en lyssnare, och ett klick hade startat flera anrop. 
 
-Genom att använda variabler för både färger, textstorlek och spacing anser jag att webbsidan fick en genomgående konsekvens. Det var också mycket lättare att uppdatera och ändra spacing då det oftast bara behövdes göras på ett ställe. 
+## Markup du inte skrivit för hand
+Markupen för projektkorten, CV-posterna och skeleton-korten skrev jag för hand i `<template>`-element. JavaScript klonar dem och fyller bara i texten, vilket gör att det genererade innehållet får samma element och rubrikhierarki som resten av sidan.
 
-Om jag hade haft mer tid hade jag nog lagt in fler animationer, exempelvis för navigationen i mobilvyn. 
+JavaScript sätter aria-pressed på filterknapparna, så att skärmläsaren vet vilken som är vald. Eftersom bara ett filter kan vara aktivt åt gången hade radioknappar nog varit mer korrekt semantiskt. Skeleton-korten har aria-hidden, så att tomma platshållare inte läses upp. Felmeddelandet ligger i role="alert", vilket gör att skärmläsaren läser upp det direkt när det visas. Elementet finns i HTML:en från början, eftersom skärmläsaren behöver känna till området innan innehållet ändras.
 
-# AI
-Jag använde Claude som AI-verktyg och hjälpmedel för att fråga om olika lösningar och hur man kan implementera dem. Exempelvis göra mobilnavigationen interaktiv. Något som jag faktiskt valde bort som AI gav som förslag var att sätta `aria-label="meny"`på hamburger menyn. Det hade fungerat men jag valde istället att använda mig av ett span med texten Menu istället och använda klassen visually-hidden för att endast dölja den visuellt. Jag tog det beslutet för att undvika använda aria attribut när det går att lösa med vanliga element.
-Jag använde också AI som granskningsverktyg. Exempelvis kunde AI upptäcka när `aria-current="page"`satt på fel länk, vilket är lätt hänt när man copy och pastar samma navigationsbar på flera sidor.
+## Temaväxlingen
+Färgerna är satta med variabler i `:root` och i mörkt läge ändrar jag bara färgvärderna för variablerna i mediaquerien och för `[data-theme="dark"]`. Då följer sidan systemets färger eller om användaren väljer att sätta data-theme dark/light utan javaScript. `theme.js` läser användarens val från `localStorage` och sätter `data-theme` på `<html>`. Jag valde data-attribut eftersom det endast kan ha ett värde pt gången. Med klasser finns risken att man sätter två klasser samtidigt, `.light` och `.dark`.  Om jag hade satt färgerna i JS hade alla element behövs pekas ut i koden vilket skulle ta lång tid och nya element hade inte fått rätt färger förens de var satta i JS. 
+
+## Modern JavaScript
+Jag delade upp koden i moduler där varje fil ska ha ett ansvar, tex hämtar `api.js` data och `render.js` bygger DOM. `index.js` laddas på alla sidor så varje init-funktion börjar med en säkerhetsguard som avbryter om elementen inte finns på sidan. De fungerar som varje moduls startknapp. 
+
+Destructuring och spread gjorde mest skillnad i `projects.js`:
+
+```js
+
+const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
+
+
+return {
+
+...repo,
+
+topics: repo.topics ?? [],
+
+isMyPick: moreInfo?.isMyPick ?? false,
+
+image: moreInfo?.image ?? meta.placeholder,
+
+};
+
+```
+Destructuring ger de två svaren tydliga namn direkt. Spread kopierar alla fält från repot, så jag skriver bara det som är nytt.
+
+`.?`och `??`fungerar som guards. Om ett repo tex skulle saknas i `porjects.json`ger `moreInfo.?isMyPick` värdet undefined och `??` kan då byta ut det mot ett reservvärde.
+
+## När det inte går som tänkt
+Medan anropet pågor visas skeleton-kort och filter är disabled. Från början renderade bara `loadProjects()` skeleton-korten. När jag testade med långsamt nätverk i dev-tools så syndes ingetting en stund. Detta pga att JS - laddas in senare (varje import blir en ny request innan koden körs). Därför la jag in disabled och 3 skeleton kort direkt i HTML. Det gör också att platsen reserveras och sidan inte hoppar när korten kommer in. Nackdelen är att skeleton-korten finns på två ställen, HTML och i loadProjects.
+
+Jag valde också att sätta en `AbortSignal.timeout(8000)` i `fetchData()`, på så sätt visas ett felmeddelande inom 8 sek om inte GitHub svarar. Det undviker att sidan bara står och laddar. 
+Går anropet fel visas ett felmeddelande med en knapp för att försöka igen och en länk till min GitHub. Är listan tom eller att ett filter visar 0 projekt visas ett meddelande om det istället. 
+
+Med `Promise.all` visas inga projekt alls om `projects.json` inte går att hämta. Jag hade kunnat använda `Promise.allSettled` och visa repona med placeholder-bilder i det läget.
+
+## Styrkor och brister
+En styrka är att alla lägen är hanterade. Om jag haft mer tid skulle jag kunna cacha svaret från github. Alltså spara svaret i `localStorage`med kanske en tidstämpel och bara hämta data igen när det gått en viss tid. Idag gör varje sidladdning ett nytt anrop och de flesta API:er har en maxgräns för hur många anrop man får göra. 
+
+## Tillgänglighet och test
+Jag tabbade igenom sidan på desktop och mobil, och ordningen är logisk med synlig fokusmarkering. Jag testade också sidan med VoiceOver. I mörkt läge klarade två färger inte WCAG AA, eftersom de ärvdes från det ljusa temat. Kontrasten mot `#191919` mätte jag med Chrome DevTools och WebAIM Contrast Checker.
+
+| Variabel               | Före               | Efter             |
+| ---------------------- | ------------------ | ----------------- |
+| `--color-text-muted`   | `#6B625A`:  2.95:1 | `#9C9289`: 5.77:1 |
+| `--color-primary-text` | `#B35600`: 3.56:1  | `#FF9900`: 8.21:1 |
+
+Det ljusa temat har inga kontrastfel. HTML:en ger 0 fel på validator.w3.org. Den enda varningen gäller `role="list"` på `ul`, som jag behåller eftersom VoiceOver annars inte läser upp listan. Lighthouse gav 100 i Accessibility.
+
+## AI-verktyg
+Jag använde Claude för att generera JSON-filerna, förstå vilken endpoint i GitHubs API jag skulle använda och resonera kring var projektbilderna borde ligga. När jag frågade försökte jag alltid få veta varför en lösning var bättre. Om jag var osäker på svaret jag fick sökte jag vidare. Exempelvis föreslog AI en `div` runt filterknapparna. Jag antog att det fanns ett annat mer semantiskt korrekt element, och sökte därför upp det. Jag valde då  `<fieldset>` istället, vilket gjorde att jag slapp ARIA.
+
+Jag tog också hjälp med strukturen för JS-filerna, vilket jag nog gjorde för tidigt. Vi hade en workshop med Andreas där han gick igenom struktur och arkitektur och hur man bör tänka i mindre projekt. Exempelvis genom el och state-objekt. I `projects.js` finns valt filter bara i DOM:en som `aria-pressed`. Med ett `state`-objekt och en `render()` som alltid läser från det hade ett filterklick bara behövt ändra `state.filter`. Jag har även använt AI för att strukturera anteckningarna till den här reflektionen.

@@ -80,7 +80,7 @@ function handleFilterClick(e) {
 }
 
 function renderProjects(projects){
-  renderList(projects, projectContainer, (repo) => createProjectCard(repo));
+  renderList(projects, projectContainer, (repo, index) => createProjectCard(repo, index));
   
   filterStatus.textContent = `Showing ${projects.length} ${projects.length === 1 ? "project" : "projects"}`;
   filterEmpty.hidden = projects.length > 0;

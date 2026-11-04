@@ -48,6 +48,13 @@
         "alt": "View of the start panel of the application"
       }
     },
+    "stadsbyggaren": {
+      "isMyPick": true,
+      "image": {
+        "src": "assets/images/stadsbyggaren.webp",
+        "alt": "View of the homepage with active challenges and game in progress"
+      } 
+    },
     "placeholder": {
       "src": "assets/images/placeholder.webp",
       "alt": ""

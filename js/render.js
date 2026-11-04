@@ -19,9 +19,13 @@ export function createProjectCard({
   homepage,
   html_url,
   image,
-}) {
+}, index) {
   const projectTemplate = document.querySelector("#project-card-template");
   const clone = projectTemplate.content.cloneNode(true);
+
+  // För animation
+  const li = clone.querySelector("li");
+  li.style.setProperty("--i", index);
 
   const imgElement = clone.querySelector(".project-image");
   imgElement.src = image.src;

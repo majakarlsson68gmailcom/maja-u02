@@ -319,7 +319,3 @@ footer {
     padding-block: var(--space-6);
     text-align: center;
 }
-
-@media (prefers-reduced-motion: reduce) {
-    .skeleton { animation: none; }
-}

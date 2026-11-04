@@ -31,8 +31,3 @@ function setTheme(theme, toggleBtn){
         localStorage.setItem("theme", newTheme);
     })
 }
-
-
-
-// const currentTheme = getCurrentTheme();
-// setTheme(currentTheme);

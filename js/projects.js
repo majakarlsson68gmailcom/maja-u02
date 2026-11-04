@@ -29,6 +29,7 @@ async function loadProjects() {
   projectsEmpty.hidden = true;
   renderSkeletons(projectContainer, "#project-skeleton-template", 3);
   filterBar.disabled = true;
+  filterStatus.textContent = "Loading projects..."
 
   try {
     const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
@@ -61,6 +62,7 @@ async function loadProjects() {
 
     renderErrorMessage(projectsError, error, "Something went wrong while fetching the projects. Try again, or browse my work directly on Github.");
 
+    filterStatus.textContent = "";
     filterBar.hidden = true;
   }
 }

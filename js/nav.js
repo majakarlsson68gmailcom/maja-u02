@@ -1,8 +1,9 @@
+
+const toggle = document.querySelector(".nav-toggle");
+const navContainer = document.querySelector(".nav-container");
+const navLinks = document.querySelectorAll(".nav-list a");
+
 export function initNav(){
-    // letar bara upp elementen först när funktionen anropas
-  const toggle = document.querySelector(".nav-toggle");
-  const navContainer = document.querySelector(".nav-container");
-  const navLinks = document.querySelectorAll(".nav-list a");
 
   if (!toggle || !navContainer) return;
 

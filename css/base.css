@@ -172,6 +172,8 @@
   --color-surface: #363636;
   --color-text: #FAF6F1;
   --color-text-content: #D9D2C9; /* I projekt korten */
+  --color-text-muted: #9C9289;
+  --color-primary-text: #FF9900; 
   
   --color-text-strong: #fff;
 
@@ -189,6 +191,8 @@
   --color-surface: #363636;
   --color-text: #FAF6F1;
   --color-text-content: #D9D2C9; /* I projekt korten */
+  --color-text-muted: #9C9289;
+  --color-primary-text: #FF9900; 
   
   --color-text-strong: #fff;
 

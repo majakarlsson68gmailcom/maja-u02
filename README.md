@@ -63,7 +63,7 @@ Medan anropet pågor visas skeleton-kort och filter är disabled. Från början 
 Jag valde också att sätta en `AbortSignal.timeout(8000)` i `fetchData()`, på så sätt visas ett felmeddelande inom 8 sek om inte GitHub svarar. Det undviker att sidan bara står och laddar. 
 Går anropet fel visas ett felmeddelande med en knapp för att försöka igen och en länk till min GitHub. Är listan tom eller att ett filter visar 0 projekt visas ett meddelande om det istället. 
 
-Med `Promise.all` visas inga projekt alls om `projects.json` inte går att hämta. Jag hade kunnat använda `Promise.allSettled` och visa repona med placeholder-bilder i det läget.
+Med `Promise.all` visas inga projekt alls om `projects.json` inte går att hämta. Jag valde det eftersom filen ligger lokalt och det är sällan att det inte fungerar. Jag hade kunnat använda `Promise.allSettled` som väntar in båda anropen och får veta vilka som lyckades. Då hade jag kunnat visa repona med placeholder-bilder istället för felmeddelande.
 
 ## Styrkor och brister
 En styrka är att alla lägen är hanterade. Om jag haft mer tid skulle jag kunna cacha svaret från github. Alltså spara svaret i `localStorage`med kanske en tidstämpel och bara hämta data igen när det gått en viss tid. Idag gör varje sidladdning ett nytt anrop och de flesta API:er har en maxgräns för hur många anrop man får göra. 

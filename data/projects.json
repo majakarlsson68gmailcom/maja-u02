@@ -3,7 +3,7 @@
       "isMyPick": true,
       "image": {
         "src": "assets/images/note-taking-app.webp",
-        "alt": "Note taking app with form for entering a note"
+        "alt": "Notes app with a modal for creating a new note, with fields for title and content, over a dimmed note list."
       }
     },
     "traningslogg": {
@@ -17,35 +17,35 @@
       "isMyPick": true,
       "image": {
         "src": "assets/images/pig-game.webp",
-        "alt": "Pig game app"
+        "alt": "Two-player dice game with each player’s total and round score, two dice in the center and buttons for rolling and holding points."
       }
     },
     "interactive-rating-component": {
       "isMyPick": false,
       "image": {
         "src": "assets/images/interactive-component.webp",
-        "alt": "Rating card with stars"
+        "alt": "Dark rating card asking “How did we do?”, with rating buttons from 1 to 5 and an orange Submit button."
       }
     },
     "calculator": {
       "isMyPick": false,
       "image": {
         "src": "assets/images/calculator.webp",
-        "alt": "Digital calculator application"
+        "alt": "Dark calculator with round buttons and orange operator keys, showing the result 64 for 8 × 8."
       }
     },
     "library": {
       "isMyPick": false,
       "image": {
         "src": "assets/images/book-library.webp",
-        "alt": "Book library application with one book added"
+        "alt": "Book library app with a book card showing title, author, page count and Unread and Delete buttons, next to a form for adding a new book."
       }
     },
     "ai-descision-support": {
       "isMyPick": true,
       "image": {
         "src": "assets/images/ai-decision-support.webp",
-        "alt": "View of the start panel of the application"
+        "alt": "Case view for a credit decision on desktop, showing the AI recommendation with a low confidence level, a data quality warning and locked decision buttons."
       }
     },
     "stadsbyggaren": {
@@ -53,6 +53,13 @@
       "image": {
         "src": "assets/images/stadsbyggaren.webp",
         "alt": "View of the homepage with active challenges and game in progress"
+      } 
+    },
+    "fyll-burken": {
+      "isMyPick": true,
+      "image": {
+        "src": "assets/images/fyll-burken.webp",
+        "alt": "Start page on mobile, showing an empty jar that fills up with correct answers and a Start quiz button."
       } 
     },
     "placeholder": {

@@ -19,7 +19,6 @@ header {
         min-width: 42px;
         max-width: 60px;
         border-radius: 50%;
-        border: 1px solid var(--color-primary);
         aspect-ratio: 1 / 1;
         object-fit: cover;
         object-position: center 30%;
@@ -43,13 +42,14 @@ header {
 }
 
 .darkmode-toggle {
-    background-color: transparent;
-    border: 1px solid var(--color-text-content);
+    background-color: var(--color-text-muted);
+    border: none;
     border-radius: 50%;
     padding: 0.5rem;
     cursor: pointer;
     svg {
         min-width: 18px;
+        color: var(--color-bg);
         width: 20px;
         aspect-ratio: 1 / 1;
     }
@@ -150,9 +150,9 @@ header {
 
   .pill {
     font-size: var(--font-size-small);
-    font-weight: bold;
+    font-weight: 500;
     background-color: var(--color-badge-bg);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 99px;
     color: var(--color-badge-text);
 }

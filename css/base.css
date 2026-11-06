@@ -203,6 +203,9 @@
   --color-text-strong: #fff;
 
   --color-text-hover: #fffdfd;
+
+  --color-link-btn: rgb(35, 35, 35);
+  --color-link-border: #494949;
  
   .icon-invert {
     filter: invert(0.8);

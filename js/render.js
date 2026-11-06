@@ -53,6 +53,8 @@ export function createProjectCard({
     previewLink.remove();
   }
 
+  clone.querySelectorAll(".link-project-name").forEach((el) => el.textContent = title);
+
   return clone;
 }
 
@@ -100,4 +102,9 @@ export function renderErrorMessage(errorContainer, error, fallbackMessage) {
   const messageEl = errorContainer.querySelector(".load-error-message");
   messageEl.textContent = message;
   errorContainer.hidden = false;
+}
+
+export function retryWithTabFocus(load, focusTarget){
+  load();
+  focusTarget.focus();
 }

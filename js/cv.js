@@ -1,16 +1,17 @@
 import { loadCV } from "./api.js";
-import { renderList, createCvItem, renderSkeletons, renderErrorMessage } from "./render.js";
+import { renderList, createCvItem, renderSkeletons, renderErrorMessage, retryWithTabFocus } from "./render.js";
 
 const cvListWork = document.querySelector(".cv-list-work");
 const cvListEducation = document.querySelector(".cv-list-education");
 const cvLists = document.querySelector(".cv-lists");
 const cvError = document.querySelector("#cv-error");
+const cvHeading = document.querySelector(".cv-lists h2");
 
 
-export async function initCV() {
+export function initCV() {
   if (!cvListWork || !cvListEducation) return;
 
-  cvError.querySelector(".retry-btn").addEventListener("click", loadCvLists);
+  cvError.querySelector(".retry-btn").addEventListener("click", () => retryWithTabFocus(loadCvLists, cvHeading));
 
   loadCvLists();
 }

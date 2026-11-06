@@ -1,5 +1,5 @@
 import { loadRepos, loadProjectMeta } from "./api.js";
-import { renderList, createProjectCard, renderSkeletons, renderErrorMessage } from "./render.js";
+import { renderList, createProjectCard, renderSkeletons, renderErrorMessage, retryWithTabFocus } from "./render.js";
 import { filterProjects } from "./filter.js";
 
 const projectContainer = document.querySelector(".project-card-container");
@@ -8,15 +8,16 @@ const projectsEmpty = document.querySelector(".projects-empty");
 const filterBar = document.querySelector(".filter-bar");
 const filterStatus = document.querySelector(".filter-status");
 const filterEmpty = document.querySelector(".filter-empty");
+const projectsHeading = document.querySelector("#projects h2");
 
 let allProjects = [];
 
-export async function initProjects() {
+export function initProjects() {
   if (!projectContainer) return;
 
   projectsError
     .querySelector(".retry-btn")
-    .addEventListener("click", loadProjects);
+    .addEventListener("click", () => retryWithTabFocus(loadProjects, projectsHeading));
 
   filterBar.addEventListener("click", handleFilterClick);
 
@@ -51,8 +52,11 @@ async function loadProjects() {
     if (projects.length === 0) {
       projectContainer.replaceChildren();
       projectsEmpty.hidden = false;
+      filterStatus.textContent = "";
+      filterBar.hidden = true;
       return;
     }
+
     renderProjects(allProjects);
     filterBar.disabled = false;
    

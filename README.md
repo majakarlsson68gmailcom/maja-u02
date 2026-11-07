@@ -15,7 +15,7 @@ CV:t ligger i en JSON-fil, så fälten är kända. Anropet kan ändå misslyckas
 
 Github kan dock vara långsamt, stängas av efter ett visst antal anrop eller skicka `null` i fält som jag kanske tror finns. Repon utan beskrivning sorterar jag bort med `filter()`, eftersom jag inte vill visa dem i portfolion och kortet annars hade fått ett tomt beskrivningsfält. `topics` får `?? []` som reservvärde, och live-länken tas bort om `homepage` saknas. All text sätts med `textContent`, vilket skyddar mot XSS, det vill säga att innehåll från API:et aldrig kan köras som kod på sidan.
 
-Filtreringen via kategorier utgår ifrån topics från Github, så nya repon hamnar rätt automatiskt. Däremot behövde My Picks och bidlerna ligga i en json fil eftersom Github inte vet vilka repon som borde vara "My Picks" eller vilka bilder jag vill ha. Jag hade nog kunna lägga in bilder direkt i repot på Github, men för detta projekt ansåg jag att det fungerar bra att lägga dem i json. 
+Filtreringen via kategorier utgår ifrån topics från Github, så nya repon hamnar rätt automatiskt. Däremot behövde My Picks och bidlerna ligga i en json fil eftersom Github inte vet vilka repon som borde vara "My Picks" eller vilka bilder jag vill ha. Jag hade kunna lägga in bilder direkt i repot på Github, men för detta projekt ansåg jag att det fungerar bra att lägga dem i json. 
 
 ## DOM och händelser
 All rendering sker genom `renderList()`. Från början skapade funktionen korten och rendera dem, men jag delade upp det i två funktioner. Det gjorde att samma rendering även fungera för CV:et, projekten och filtreringen. 
@@ -39,23 +39,17 @@ Destructuring och spread gjorde mest skillnad i `projects.js`:
 
 const [repos, meta] = await Promise.all([loadRepos(), loadProjectMeta()]);
 
-
 return {
-
 ...repo,
-
 topics: repo.topics ?? [],
-
 isMyPick: moreInfo?.isMyPick ?? false,
-
 image: moreInfo?.image ?? meta.placeholder,
-
 };
 
 ```
 Destructuring ger de två svaren tydliga namn direkt. Spread kopierar alla fält från repot, så jag skriver bara det som är nytt.
 
-`.?`och `??`fungerar som guards. Om ett repo tex skulle saknas i `porjects.json`ger `moreInfo.?isMyPick` värdet undefined och `??` kan då byta ut det mot ett reservvärde.
+`?.`och `??`fungerar som guards. Om ett repo tex skulle saknas i `porjects.json`ger `moreInfo?.isMyPick` värdet undefined och `??` kan då byta ut det mot ett reservvärde.
 
 ## När det inte går som tänkt
 Medan anropet pågor visas skeleton-kort och filter är disabled. Från början renderade bara `loadProjects()` skeleton-korten. När jag testade med långsamt nätverk i dev-tools så syndes ingetting en stund. Detta pga att JS - laddas in senare (varje import blir en ny request innan koden körs). Därför la jag in disabled och 3 skeleton kort direkt i HTML. Det gör också att platsen reserveras och sidan inte hoppar när korten kommer in. Nackdelen är att skeleton-korten finns på två ställen, HTML och i loadProjects.

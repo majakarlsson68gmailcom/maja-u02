@@ -105,11 +105,23 @@
         text-decoration: none;
         gap: var(--space-1);
         white-space: nowrap;
+
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.2s ease;
     }
 
     svg {
         width: 20px;
     }
+}
+
+.project-actions a:hover{
+    background-color: var(--color-link-btn-hover);
+    border-color: var(--color-link-border-hover);
+    transform: translateY(-2px);
+}
+.project-actions a:active {
+    transform: translateY(0);
 }
 
 

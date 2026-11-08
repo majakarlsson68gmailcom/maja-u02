@@ -15,6 +15,8 @@
 
     --color-link-btn: rgb(213, 211, 211);
     --color-link-border: #b8b8ba;
+    --color-link-btn-hover: #c9c9c9;
+    --color-link-border-hover: #8c8c8c;
 
     --color-primary: #FF9900;
     --color-primary-text: #B35600;
@@ -182,8 +184,10 @@
 
   --color-text-hover: #fffdfd;
 
-  --color-link-btn: rgb(35, 35, 35);
+  --color-link-btn: #232323;
   --color-link-border: #494949;
+  --color-link-btn-hover: #050505;
+  --color-link-border-hover: #373737;
 }
 .icon-invert {
   filter: invert(0.8);
@@ -204,8 +208,10 @@
 
   --color-text-hover: #fffdfd;
 
-  --color-link-btn: rgb(35, 35, 35);
+  --color-link-btn: #232323;
   --color-link-border: #494949;
+  --color-link-btn-hover: #050505;
+  --color-link-border-hover: #373737;
  
   .icon-invert {
     filter: invert(0.8);

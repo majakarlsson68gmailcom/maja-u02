@@ -8,6 +8,6 @@ async function fetchData(url, timeout = 8000) {
 
 export const loadCV = () => fetchData(new URL("/data/cv.json", import.meta.url));
 
-export const loadRepos = () => fetchData("https://api.github.com/users/majakarlsson68gmailcom/repos?sort=pushed&direction=desc");
+export const loadRepos = () => fetchData("https://api.github.com/users/majaKarlsson-mk/repos?sort=pushed&direction=desc");
 
 export const loadProjectMeta = () => fetchData(new URL("/data/projects.json", import.meta.url));
